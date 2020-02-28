@@ -7,8 +7,10 @@
       [checked]="todo.completed"
     />
     <label for="{{ todo.id }}">
-      {{ todo.title }}
+      {{ todo.title }} {{ todo.id}}
     </label>
+    
+    <img src="{{ todo.icon }}"/>
     <button (click)="onDelete(todo)" class="del">X</button>
   </p>
 </div>

@@ -11,10 +11,33 @@ import { Todo } from 'src/app/models/Todo';
 export class TodoItemComponent implements OnInit {
   @Input() todo: Todo;
   @Output() deleteTodo: EventEmitter<Todo> = new EventEmitter();
+  
 
   constructor(private todoService:TodoService) { }
 
   ngOnInit() {
+    this.todo.icon = this.getColor(this.todo.id);
+  }
+
+  getColor(value:number) {
+      if (value > 10) {
+        value = (value %  10);
+      }
+
+    const colorDict = {
+        1:"assets/images/barRed.gif",
+        2:"assets/images/barOrange.gif",
+        3:"assets/images/barYellow.gif",       
+        4:"assets/images/barChartreuse.gif",
+        5:"assets/images/barGreen.gif",
+        6:"assets/images/barCyan.gif",
+        7:"assets/images/barBlue.gif",
+        8:"assets/images/barDarkBlue.gif",
+        9:"assets/images/barPurple.gif",
+        10:"assets/images/barMagenta.gif",
+    };
+    
+    return colorDict[value];
   }
 
   // Set Dynamic Classes
