@@ -26,8 +26,8 @@ export class TodoItemComponent implements OnInit {
   }
 
   getColor(value:number) {
-      if (value > 10) {
-        value = (value %  10);
+      if (value > 9) {
+        value = (value %  9);
       }
 
     const colorDict = {
@@ -40,7 +40,7 @@ export class TodoItemComponent implements OnInit {
         7:"assets/images/barBlue.gif",
         8:"assets/images/barDarkBlue.gif",
         9:"assets/images/barPurple.gif",
-        10:"assets/images/barMagenta.gif",
+        0:"assets/images/barMagenta.gif",
     };
     
     return colorDict[value];
