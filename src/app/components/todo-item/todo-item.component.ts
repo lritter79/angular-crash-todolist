@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { TodoService } from '../../services/todo.service';
-
+//import { TodosComponent  } from '../todos/todos.component';
 import { Todo } from 'src/app/models/Todo';
 
 @Component({
@@ -13,9 +13,15 @@ export class TodoItemComponent implements OnInit {
   @Output() deleteTodo: EventEmitter<Todo> = new EventEmitter();
   
 
-  constructor(private todoService:TodoService) { }
+  constructor(private todoService:TodoService) { 
+    
+  }
+
 
   ngOnInit() {
+    //const todos = TodosComponent;
+    //this.todo.id = todos.todos.
+    
     this.todo.icon = this.getColor(this.todo.id);
   }
 

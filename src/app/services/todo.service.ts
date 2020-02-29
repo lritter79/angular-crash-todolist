@@ -32,6 +32,7 @@ export class TodoService {
 
   // Add Todo
   addTodo(todo:Todo):Observable<Todo> {
+    console.log("method: addTodo, id= " + todo.id)
     return this.http.post<Todo>(this.todosUrl, todo, httpOptions);
   }
 
